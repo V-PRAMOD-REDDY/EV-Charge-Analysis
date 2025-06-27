@@ -1,40 +1,40 @@
-import React from 'react';
 import { Linkedin, Github, Mail } from 'lucide-react';
+import PramodImage from '../Assets/Profile_win.jpg'; // ✅ imported properly
 
 const Team = () => {
   const teamMembers = [
     {
       name: 'V PRAMOD REDDY',
-      //role: 'Lead Data Scientist',
-      image: 'src/Assets/Profile_win.jpg',
-      //bio: 'PhD in Data Science with 10+ years in automotive analytics and EV research.',
+      role: 'Lead Data Scientist',
+      image: PramodImage,
+      bio: 'PhD in Data Science with 10+ years in automotive analytics and EV research.',
       linkedin: 'https://www.linkedin.com/in/v-pramod-reddy-01683a29b/',
       github: 'https://github.com/V-PRAMOD-REDDY',
       email: 'vpramodreddy59@gmail.com'
     },
     {
       name: 'VK',
-      //role: 'Senior Analytics Engineer',
+      role: 'Senior Analytics Engineer',
       image: '#',
-      //bio: 'Specializes in real-time data processing and visualization for EV infrastructure.',
+      bio: 'Specializes in real-time data processing and visualization for EV infrastructure.',
       linkedin: '#',
       github: '#',
       email: '#'
     },
     {
       name: 'VM',
-      //role: 'Product Manager',
+      role: 'Product Manager',
       image: '#',
-      //bio: 'Former Tesla product manager with expertise in EV market analysis and strategy.',
+      bio: 'Former Tesla product manager with expertise in EV market analysis and strategy.',
       linkedin: '#',
       github: '#',
       email: '#'
     },
     {
       name: 'VK',
-      //role: 'UI/UX Designer',
+      role: 'UI/UX Designer',
       image: '#',
-      //bio: 'Creates intuitive interfaces for complex data visualization and user experiences.',
+      bio: 'Creates intuitive interfaces for complex data visualization and user experiences.',
       linkedin: '#',
       github: '#',
       email: '#'
@@ -65,19 +65,21 @@ const Team = () => {
                 />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-              <p className="text-blue-600 font-medium mb-4">{member.role}</p>
-              <p className="text-gray-600 text-sm mb-6 leading-relaxed">{member.bio}</p>
+              {member.role && <p className="text-blue-600 font-medium mb-4">{member.role}</p>}
+              {member.bio && <p className="text-gray-600 text-sm mb-6 leading-relaxed">{member.bio}</p>}
               
               <div className="flex justify-center space-x-4">
                 <a
                   href={member.linkedin}
                   className="p-2 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors duration-200"
+                  target="_blank"
                 >
                   <Linkedin className="h-4 w-4 text-blue-600" />
                 </a>
                 <a
                   href={member.github}
                   className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-200"
+                  target="_blank"
                 >
                   <Github className="h-4 w-4 text-gray-600" />
                 </a>
@@ -105,6 +107,7 @@ const Team = () => {
       </div>
     </section>
   );
+  
 };
 
 export default Team;
